@@ -1,0 +1,22 @@
+import os
+
+import tushare as ts
+
+stock_list_file = 'stock_list.csv'
+project_dir = 'G:\\Code\\StockPrediction\\'
+
+
+def get_stock_basic():
+    print('开始下载股票列表数据')
+    df = ts.get_stock_basics().astype('object')
+    # df2 = ts.get_today_all()
+    df.to_csv(project_dir + "Datapool\\" + stock_list_file)
+
+
+if __name__ == '__main__':
+    print('开始...')
+    get_stock_basic()
+    print('结束')
+
+
+
